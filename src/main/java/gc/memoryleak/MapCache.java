@@ -30,7 +30,7 @@ public class MapCache {
         wMap.put(ref2, "cacheObject2");
         map.put(ref3, "cacheObject3");
         map.put(ref4, "cacheObject4");
-        System.out.println("String引用ref1，ref2，ref3，ref4 消失");
+        System.out.println("String引用:ref1，ref2，ref3，ref4");
 
     }
 
@@ -71,8 +71,7 @@ public class MapCache {
 
 }
 /**
- * 结果
- * String引用ref1，ref2，ref3，ref4 消失
+ * 结果:
  * WeakHashMap GC之前
  * obejct2=cacheObject2
  * obejct1=cacheObject1
