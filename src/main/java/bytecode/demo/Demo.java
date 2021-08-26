@@ -1,4 +1,4 @@
-package byte_code.demo;
+package bytecode.demo;
 
 /**
  * @author PengFuLin

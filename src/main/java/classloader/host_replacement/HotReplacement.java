@@ -1,4 +1,4 @@
-package class_loader.hostreplacement;
+package classloader.host_replacement;
 
 import java.lang.reflect.Method;
 
@@ -15,7 +15,7 @@ public class HotReplacement {
         while (true) {
             try {
                 //1. 创建自定义类加载器的实例
-                MyClassLoader loader = new MyClassLoader("D:\\Git\\JavaVirtualMachine\\target\\classes");
+                MyClassLoader loader = new MyClassLoader("D:\\Git\\JVM\\java-virtual-machine\\target\\classes");
                 //2. 加载指定的类
                 Class clazz = loader.findClass("classloader.host_replacement.HostReplacementClassDemo");
                 //3. 创建运行时类的实例

@@ -1,4 +1,4 @@
-package class_loader.hostreplacement;
+package classloader.host_replacement;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;

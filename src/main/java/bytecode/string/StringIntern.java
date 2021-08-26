@@ -1,4 +1,4 @@
-package byte_code.string;
+package bytecode.string;
 
 import org.junit.Test;
 

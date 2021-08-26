@@ -1,4 +1,4 @@
-package byte_code.demo;
+package bytecode.demo;
 
 public class  Father{
     static int fatherVar=1;

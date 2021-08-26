@@ -1,4 +1,4 @@
-package class_loader.demo;
+package classloader.demo;
 
 /**
  * @author PengFuLin
