@@ -15,4 +15,4 @@ hs_err_pid*
 
 /target
 
-src/main/resources/applications
+src/main/resources/Applications
