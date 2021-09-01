@@ -10,7 +10,12 @@ import org.junit.Test;
  */
 public class IntegerCode {
 
-    /*i++和++i的区别*/
+    //1.i++和++i的区别
+
+    /**总结：
+      i++和++i的结果是一样的，但是如果进行赋值，
+      则i++赋的时运算之前的，而++i赋的运算之后的*/
+
 
     /*
        0 bipush 10
@@ -29,25 +34,27 @@ public class IntegerCode {
         System.out.println(i); //11
     }
 
-    /* 字节码分析：
-      0 bipush 10 常数10 压入栈
-       2 istore_1 常数10 出栈，放入局部变量表1位置
-       3 iload_1 常数10 压入操作数栈顶
-       4 iinc 1 by 1  注意：将局部变量表为1的位置的变量自增1 ==11
-       7 istore_1 栈顶元素常数10 出栈，放入局部变量表1为位置（覆盖上一步的自增后的11）
-       8 getstatic #2 <java/lang/System.out : Ljava/io/PrintStream;>
-      11 iload_1  常数10 压入操作数栈顶
-      12 invokevirtual #3 <java/io/PrintStream.println : (I)V>
-       ==》弹出栈顶元素常数11 完成println方法的调用
-      15 return
-    */
 
+    /*
+       0 bipush 10  10 常数10 压入栈
+       2 istore_1 常数10 出栈，放入局部变量表1位置
+       (-- - -- -- - -iload_1)
+       3 iinc 1 by 1  注意：将局部变量表为1的位置的变量自增1 ==11
+       6 getstatic #2 <java/lang/System.out : Ljava/io/PrintStream;>
+       9 iload_1 常数11 压入操作数栈顶
+      10 invokevirtual #3 <java/io/PrintStream.println : (I)V>
+         ==》弹出栈顶元素常数11 完成println方法的调用
+      13 return
+     */
     @Test
     public void test2(){
         int i = 10;
         i++;
         System.out.println(i);
     }
+
+
+
     /*
       0 iconst_2
       1 istore_1
@@ -61,7 +68,8 @@ public class IntegerCode {
       9 getstatic #2 <java/lang/System.out : Ljava/io/PrintStream;>
      12 iload_1 整数4压栈
      13 invokevirtual #3 <java/io/PrintStream.println : (I)V>
-     16 return*/
+     16 return
+    */
     @Test
     public void test3(){
         int i = 2;
@@ -84,32 +92,17 @@ public class IntegerCode {
       18 iload_1 .....
       19 invokevirtual #3 <java/io/PrintStream.println : (I)V>
       22 return
-
-      ==>总结：
-      i++和++i的结果是一样的，但是在运算后第一次
-      操作其结果时，给出的值不一样，i++，第一次获取其运算的结果是没有
-      自增之前的，而i++获取的结果是自增之后的。
      */
     @Test
     public void test4(){
         int k = 10;
-        k = k + (k++) + (++k); //
+        k = k + (k++) + (++k);
         System.out.println(k);//32
     }
 
 
-    @Test
-    public void test001(){
-        int k=10;
-        k--;
-        // iinc 1 by -1
-        System.out.println(k);
-    }
 
-    /*包装类对象的数据缓存*/
-
-
-
+    //2.包装类对象的数据缓存
 
     @Test
     public void test5(){
