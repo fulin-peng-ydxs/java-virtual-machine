@@ -52,10 +52,5 @@ public class StringIntern {
         }
         long end = System.currentTimeMillis();
         System.out.println("花费的时间为：" + (end - start));
-
     }
-
-
-
-
 }

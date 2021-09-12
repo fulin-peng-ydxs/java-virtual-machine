@@ -1,4 +1,4 @@
-package classloader.host_replacement;
+package classloader.hostreplace;
 
 import java.lang.reflect.Method;
 

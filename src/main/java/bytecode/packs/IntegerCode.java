@@ -1,4 +1,4 @@
-package bytecode;
+package bytecode.packs;
 
 import org.junit.Test;
 
