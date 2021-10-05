@@ -154,7 +154,7 @@ public class StringAppend {
             src.append("a");
         }
         String result = src.toString();
-        long end = System.currentTimeMillis();
+        long  end = System.currentTimeMillis();
         long time = end - start;
         System.out.println("StringBuilder “append” ==》"+time);
     }
