@@ -1,7 +1,5 @@
 .idea/**
 /**/target
-/**/*.iml
 /**/.idea
-
 #特定
 /**/Applications
